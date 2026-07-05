@@ -23,7 +23,7 @@ Browser → public/index.php → Router → Controller → Service → Repositor
 ### Bước 1 — Giải nén / clone project
 
 ```bash
-cd training-center-crm/crm
+cd /training-center-crm
 ```
 
 ### Bước 2 — Tạo database
@@ -121,7 +121,7 @@ Sinh thêm 200 leads + 200 orders (mỗi order có `paid_amount > 0` sẽ kèm t
 ## 5. Cấu trúc thư mục
 
 ```
-crm/
+training-center-crm
 ├── app/
 │   ├── Controllers/   HomeController, AuthController, DashboardController,
 │   │                  LeadController, OrderController, PublicLeadController, HealthController
@@ -203,16 +203,8 @@ curl -i "http://localhost:8000/leads?page=9999"
 - Form công khai có honeypot + rate limit chống spam
 - Trang lỗi 404 / 405 / 403 / 500 riêng biệt
 
-## 9. Hạn chế đã biết (ghi nhận trung thực)
 
-- `LeadController::index()`, `OrderController::index()`, `DashboardController::index()` **chưa có try/catch** quanh lời gọi Service — nếu DB lỗi giữa phiên làm việc (khác với lỗi kết nối lúc khởi động), exception sẽ không được `log_error()` ghi lại và người dùng sẽ thấy lỗi PHP mặc định thay vì trang `errors/500.php`.
-- `LeadService`/`OrderService` chỉ bắt `DuplicateRecordException`, chưa bắt `Exception` chung — các lỗi DB khác ngoài trùng khóa (mất kết nối giữa chừng...) khi `create()`/`update()` sẽ không được xử lý an toàn.
-- Chưa có file test script (`.sh`/`.ps1`) hay Postman collection riêng — hiện chỉ có các lệnh `curl` viết tay trong README.
-- Git chưa được khởi tạo cho project này — cần tự chạy `git init` + commit theo mốc trước khi push lên GitHub.
-
----
-
-## 10. Lưu ý bảo mật khi triển khai thật
+## 9. Lưu ý bảo mật khi triển khai thật
 
 - Đổi `config/app.php` → `'debug' => false` trước khi deploy (mặc định đã là `false`)
 - Không commit `config/database.php` chứa password thật lên Git công khai
