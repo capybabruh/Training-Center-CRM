@@ -1,0 +1,11 @@
+[2026-07-01 07:03:01] ERROR: Database connection failed at bootstrap | PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in D:\PHP\training-center-crm\crm\app\Core\Database.php:15
+[2026-07-01 07:24:12] INFO: Login success: admin@crm.local (role=admin)
+[2026-07-01 07:25:47] INFO: Login success: admin@crm.local (role=admin)
+[2026-07-01 07:29:25] INFO: Logout: user_id=1
+[2026-07-01 07:29:29] INFO: Login success: admin@crm.local (role=admin)
+[2026-07-01 07:29:38] INFO: Logout: user_id=1
+[2026-07-01 07:29:49] INFO: Login success: admin@crm.local (role=admin)
+[2026-07-01 07:41:09] INFO: Honeypot triggered, IP: ::1
+[2026-07-01 07:45:32] INFO: Logout: user_id=1
+[2026-07-01 07:49:17] INFO: Login success: admin@crm.local (role=admin)
+[2026-07-01 09:31:52] INFO: Login success: admin@crm.local (role=admin)
